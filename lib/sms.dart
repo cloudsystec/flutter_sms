@@ -74,7 +74,10 @@ class SmsMessage implements Comparable<SmsMessage> {
       this._threadId = data["thread_id"];
     }
     if (data.containsKey("read")) {
-      this._read = data["read"] as int == 1;
+      try {
+        var dt = data["read"] as int?;
+        this._read = dt == 1;
+      } catch (e) {}
     }
     if (data.containsKey("kind")) {
       this._kind = data["kind"];
