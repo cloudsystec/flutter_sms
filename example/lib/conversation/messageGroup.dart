@@ -14,8 +14,8 @@ class MessageGroup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final userProfile = ConversationStore.of(context).userProfile;
-    final thread = ConversationStore.of(context).thread;
+    final userProfile = ConversationStore.of(context)!.userProfile;
+    final thread = ConversationStore.of(context)!.thread;
 
     List<Widget> widgets = <Widget>[
       new Container(
@@ -45,7 +45,7 @@ class MessageGroup extends StatelessWidget {
   }
 
   String _formatDatetime(SmsMessage message, BuildContext context) {
-    return MaterialLocalizations.of(context).formatFullDate(message.date);
+    return MaterialLocalizations.of(context).formatFullDate(message.date!);
   }
 
   bool _isCompactMode(int i) {

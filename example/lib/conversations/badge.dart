@@ -24,7 +24,7 @@ class Badge extends StatelessWidget {
 
   int _countUnreadMessages() {
     return messages
-        .where((msg) => msg.kind == SmsMessageKind.Received && !msg.isRead)
+        .where((msg) => msg.kind == SmsMessageKind.Received && !msg.isRead!)
         .length;
   }
 }

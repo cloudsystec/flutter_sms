@@ -13,7 +13,7 @@ class ReceivedMessage extends Message {
             backgroundColor: Colors.grey[300],
             arrowDirection: ArrowDirection.Left);
 
-  final Contact contact;
+  final Contact? contact;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class ReceivedMessage extends Message {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               new Container(
-                child: createAvatar(contact.thumbnail, contact.fullName),
+                child: createAvatar(contact!.thumbnail, contact!.fullName),
                 margin: new EdgeInsets.only(right: 8.0, top: 8.0),
               ),
               new Expanded(
@@ -36,7 +36,7 @@ class ReceivedMessage extends Message {
                   child: new Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      new Text(message.body.trim()),
+                      new Text(message.body!.trim()),
                       new Align(
                         child: new Padding(
                           padding: new EdgeInsets.only(top: 5.0),

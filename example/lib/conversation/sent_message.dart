@@ -12,7 +12,7 @@ class SentMessage extends Message {
             backgroundColor: Colors.lightBlue[100],
             arrowDirection: ArrowDirection.Right);
 
-  final UserProfile userProfile;
+  final UserProfile? userProfile;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class SentMessage extends Message {
                   child: new Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      new Text(message.body.trim()),
+                      new Text(message.body!.trim()),
                       new Align(
                         child: new Padding(
                           padding: new EdgeInsets.only(top: 5.0),
@@ -50,7 +50,7 @@ class SentMessage extends Message {
               ),
               new Container(
                 child:
-                    createAvatar(userProfile.thumbnail, userProfile.fullName),
+                    createAvatar(userProfile!.thumbnail, userProfile!.fullName),
                 margin: new EdgeInsets.only(left: 8.0, top: 8.0),
               ),
             ],
